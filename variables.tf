@@ -15,7 +15,7 @@ variable "aws_region" {
 }
 
 variable "aws_zones" {
-  type        = list
+  type        = list(any)
   description = "AWS AZs"
 }
 

@@ -1,6 +1,16 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 2.7"
+    }
+  }
+}
+
 provider "aws" {
-  region  = var.aws_region
-  version = "~> 2.7"
+  region                  = var.aws_region
+  shared_credentials_file = "/Users/timcondit/.aws/credentials"
+  profile                 = "skillfox"
 
   assume_role {
     role_arn = "arn:aws:iam::${var.aws_acc_num}:role/assume_terraformer_role"
