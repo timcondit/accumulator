@@ -12,6 +12,7 @@ provider "aws" {
   shared_credentials_file = "/Users/timcondit/.aws/credentials"
   profile                 = "skillfox"
 
+  # TODO Add the role and policy in code. Create manually for now.
   assume_role {
     role_arn = "arn:aws:iam::${var.aws_acc_num}:role/assume_terraformer_role"
   }
