@@ -1,6 +1,6 @@
 provider "aws" {
-  region    = var.aws_region
-  version   = "~> 2.7"
+  region  = var.aws_region
+  version = "~> 2.7"
 
   assume_role {
     role_arn = "arn:aws:iam::${var.aws_acc_num}:role/assume_terraformer_role"
@@ -51,7 +51,7 @@ resource "aws_s3_bucket" "databricks_root" {
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        sse_algorithm     = "AES256"
+        sse_algorithm = "AES256"
       }
     }
   }

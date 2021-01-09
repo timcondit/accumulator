@@ -3,7 +3,7 @@
 ###################
 
 resource "aws_iam_role" "databricks_role" {
-  name = "databricks-role"
+  name        = "databricks-role"
   description = "Role used by databricks for cross-account access."
 
   assume_role_policy = <<EOF
