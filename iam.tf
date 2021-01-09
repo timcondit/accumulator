@@ -27,7 +27,7 @@ resource "aws_iam_policy" "databricks_role_access_policy" {
   path        = "/"
   description = "Databricks role Access Policy"
 
-  policy = file("${path.module}/databricks_role_access_policy.json")
+  policy = file("${path.module}/policies/databricks_role_access_policy.json")
 }
 
 resource "aws_iam_role_policy_attachment" "attach_databricks_role_access_policy" {
