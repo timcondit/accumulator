@@ -11,6 +11,7 @@ Run to create/manage AWS resources
 
 1. state.tf - add environment specific bucket names and provisioner role
 2. terraform.tfvars - add environment specific setting here
+
 ```bash
 aws_region = "<region name>"
 aws_zones = ["<list of zones go here""]
@@ -25,6 +26,4 @@ vpc_name = "<vpc tag>"
 The first thing you need after updating your environment specific files.
 `terraform init`
 
-That'll get you started. From here the standard
-`terraform apply`
-can be run
+That'll get you started. From here the standard `terraform apply` can be run.

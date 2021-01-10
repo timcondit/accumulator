@@ -41,6 +41,9 @@ terraform.rc
 
 # Ignore repo-specific files
 arn_mapping.md
-update_config_data.sh
+utils/check_all.sh
+utils/update_config_data.sh
+utils/new_aws_account.sh
+utils/rmbak.sh
 **/*bak
 

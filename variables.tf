@@ -1,14 +1,3 @@
-
-variable "vpc_name" {
-  type        = string
-  description = "AWS VPC ID"
-}
-
-variable "vpc_cidr" {
-  type        = string
-  description = "VPC CIDR block"
-}
-
 variable "aws_region" {
   type        = string
   description = "AWS region id"
@@ -27,4 +16,19 @@ variable "aws_acc_num" {
 variable "databricks_aws_acc_num" {
   type        = string
   description = "Databricks' AWS Account number"
+}
+
+variable "databricks_vpc_cidr" {
+  type        = string
+  description = "VPC CIDR created by Databricks"
+}
+
+variable "techops_vpc_cidr" {
+  type        = string
+  description = "VPC CIDR in skillfox-techops to peer with."
+}
+
+variable "peering_id" {
+  type        = string
+  description = "VPC peering id from techops"
 }
