@@ -65,7 +65,7 @@
     {
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "arn:aws:iam::977798128555:role/cgp-ec2-role"
+      "Resource": "arn:aws:iam::977798128555:role/sfcgp-ec2-role"
     },
     {
       "Effect": "Allow",

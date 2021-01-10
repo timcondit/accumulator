@@ -3,8 +3,8 @@
 ###################
 
 ################ Roles ################
-resource "aws_iam_role" "cgp_ec2_role" {
-  name = "cgp-ec2-role"
+resource "aws_iam_role" "sfcgp_ec2_role" {
+  name = "sfcgp-ec2-role"
 
   description = "Role that allows ec2 instances to access data in various s3 buckets."
 
@@ -49,18 +49,18 @@ resource "aws_iam_role" "data_scientist" {
 }
 
 ################ Instance Profiles ################
-resource "aws_iam_instance_profile" "cgp_ec2_profile" {
-  name = "cgp-ec2-profile"
-  role = aws_iam_role.cgp_ec2_role.name
+resource "aws_iam_instance_profile" "sfcgp_ec2_profile" {
+  name = "sfcgp-ec2-profile"
+  role = aws_iam_role.sfcgp_ec2_role.name
 }
 
 ################ Policies ################
-resource "aws_iam_policy" "cgp_ec2_role_access_policy" {
-  name        = "cgp-ec2-role-access-policy"
+resource "aws_iam_policy" "sfcgp_ec2_role_access_policy" {
+  name        = "sfcgp-ec2-role-access-policy"
   path        = "/"
   description = "CGP ec2 role access policy"
 
-  policy = file("${path.module}/policies/cgp_ec2_role_access_policy.json")
+  policy = file("${path.module}/policies/sfcgp_ec2_role_access_policy.json")
 }
 
 # The file contents from https://docs.databricks.com/administration-guide/account-settings/aws-accounts.html
@@ -72,9 +72,9 @@ resource "aws_iam_policy" "databricks_role_access_policy" {
   policy = file("${path.module}/policies/databricks_role_access_policy.json")
 }
 
-resource "aws_iam_role_policy_attachment" "attach_cgp_ec2_role_access_policy" {
-  role       = aws_iam_role.cgp_ec2_role.name
-  policy_arn = aws_iam_policy.cgp_ec2_role_access_policy.arn
+resource "aws_iam_role_policy_attachment" "attach_sfcgp_ec2_role_access_policy" {
+  role       = aws_iam_role.sfcgp_ec2_role.name
+  policy_arn = aws_iam_policy.sfcgp_ec2_role_access_policy.arn
 }
 
 resource "aws_iam_role_policy_attachment" "attach_databricks_role_access_policy" {

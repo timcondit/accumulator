@@ -115,12 +115,12 @@ resource "aws_s3_bucket" "databricks_root" {
   }
 }
 
-resource "aws_s3_bucket" "cgp_data_lake" {
-  bucket = "cgp-data-lake"
+resource "aws_s3_bucket" "sfcgp_data_lake" {
+  bucket = "sfcgp-data-lake"
 }
 
 resource "aws_s3_bucket_object" "sandbox" {
-  bucket = aws_s3_bucket.cgp_data_lake.id
+  bucket = aws_s3_bucket.sfcgp_data_lake.id
   acl    = "private"
   key    = "sandbox/"
   source = "/dev/null"

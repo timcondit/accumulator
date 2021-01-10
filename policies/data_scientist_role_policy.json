@@ -60,7 +60,7 @@
         "s3:PutObjectAcl"
       ],
       "Resource": [
-        "arn:aws:s3:::cgp-data-lake/*",
+        "arn:aws:s3:::sfcgp-data-lake/*",
         "arn:aws:s3:::export.dev.skillfox/*"
       ]
     }

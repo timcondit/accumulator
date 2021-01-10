@@ -191,7 +191,7 @@
             "Sid": "VisualEditor2",
             "Effect": "Allow",
             "Action": "iam:PassRole",
-            "Resource": "arn:aws:iam::252205905963:role/cgp-ec2-role"
+            "Resource": "arn:aws:iam::252205905963:role/sfcgp-ec2-role"
         }
     ]
 }
