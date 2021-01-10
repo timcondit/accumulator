@@ -33,13 +33,29 @@ resource "aws_vpc" "databricks" {
   }
 }
 
+resource "aws_vpc" "skillfox-techops" {
+  cidr_block = var.techops_vpc_cidr
+
+  tags = {
+    Name = "skillfox-techops"
+  }
+}
+
+resource "aws_vpc_peering_connection" "databricks" {
+  # creator (also owner?)
+  peer_vpc_id = aws_vpc.databricks.id
+
+  # requester
+  vpc_id = aws_vpc.skillfox-techops.id
+}
+
 # Peer to skillfox-techops
 resource "aws_vpc_peering_connection_accepter" "peer" {
   vpc_peering_connection_id = var.peering_id
   auto_accept               = true
 
   tags = {
-    Name = "techops"
+    Name = "skillfox-techops"
     Side = "Accepter"
   }
 }
